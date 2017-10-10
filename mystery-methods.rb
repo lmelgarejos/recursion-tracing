@@ -1,4 +1,5 @@
 def mystery1(n)
+  puts n
   if n == 1
     return n
   else
@@ -52,5 +53,15 @@ def mystery6(s)
       space += 1
     end
     return mystery6(s[(space+1)..-1]) + " " + s[0...space]
+  end
+end
+
+def mystery7(word)
+  if word.length < 2
+    return true
+  elsif word[0] != word[-1]
+    return false
+  else
+    return mystery7(word[1..-2])
   end
 end
